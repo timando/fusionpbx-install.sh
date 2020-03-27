@@ -70,7 +70,8 @@ fi
 if [ .$letsencrypt_folder = .true ]; then
         mkdir -p /var/www/letsencrypt/
 fi
-
+# Create an empty CA list for client verification
+touch /etc/ssl/certs/web_ca.crt
 #flush systemd cache
 systemctl daemon-reload
 
